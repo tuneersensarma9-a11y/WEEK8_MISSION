@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #141414;
+  color: white;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #111;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  color: #e50914;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+/* Search */
+
+input {
+  padding: 10px;
+  width: 250px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #bbb;
+}
+
+/* Movie Grid */
+
+.movie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+
+  gap: 25px;
+  padding: 30px;
+
+  align-items: start;
+}
+
+/* Movie Card */
+
+.movie-card {
+  position: relative;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  overflow: auto;
+  max-height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+
+  border-radius: 10px 10px 0 0;
+}
+/* Movie Info */
+
+.movie-info {
+  padding: 15px;
+  background-color: #1c1c1c;
+}
+
+.movie-info h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.movie-info p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+/* Hidden Summary */
+
+.summary {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  transform: translateY(20px);
+
+  transition:
+    max-height 0.5s ease,
+    opacity 0.5s ease,
+    transform 0.5s ease;
+
+  color: #bbb;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Hover Effect */
+
+.movie-card:hover .summary {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
+
+  margin-top: 10px;
+}
+
+/* Movie Info */
+
+.movie-info {
+  padding: 15px;
+}
+
+.movie-info h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.movie-info p {
+  color: #ccc;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.summary {
+  opacity: 0;
+
+  max-height: 0;
+
+  overflow: hidden;
+
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.4s ease,
+    max-height 0.4s ease,
+    transform 0.4s ease;
+
+  color: #bbb;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.movie-card:hover .summary {
+  opacity: 1;
+
+  max-height: 300px;
+
+  transform: translateY(0);
+
+  margin-top: 10px;
+}
